@@ -22,7 +22,7 @@ def index_images():
         try:
             img = Image.open(image_path).convert("RGB")
 
-            # 2. Convertir l'image en tableau de nombres (Numpy Array)
+            #  Convertir l'image en tableau de nombres (Numpy Array)
             img_array = np.array(img)
 
     

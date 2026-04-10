@@ -9,7 +9,7 @@ client = chromadb.PersistentClient(path="./chromadb_storage")
 
 embedding_function = OpenCLIPEmbeddingFunction()
 
-# 3. Créer ou récupérer la collection d'images(tables)
+#  Créer ou récupérer la collection d'images(tables)
 collection = client.get_or_create_collection(
     name="my_images",
     embedding_function=embedding_function

@@ -16,16 +16,16 @@ async def search(file: UploadFile = File(...)):
     request_object_content = await file.read()
     img = Image.open(io.BytesIO(request_object_content)).convert("RGB")
     
-    #  Convertir en Numpy pour ChromaDB
+    # Convertir en Numpy pour ChromaDB
     query_array = np.array(img)
     
-    #  Interroger la base de données
+    # Interroger la base de données
     results = collection.query(
         query_images=[query_array],
         n_results=3
     )
     
-    #  Retourner les résultats proprement
+    # Retourner les résultats proprement
     formatted_results = []
     for i in range(len(results['ids'][0])):
         formatted_results.append({
